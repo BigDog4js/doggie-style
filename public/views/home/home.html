@@ -1,0 +1,32 @@
+<div>
+    <md-toolbar>
+        
+        <div class="md-toolbar-tools">
+        
+            <p>
+                <strong>Welcome to doggie-style</strong>
+            </p>
+
+            <md-button ui-sref="search">
+                <md-icon class="mdi mdi-magnify">View Dogs</md-icon>
+            </md-button>
+            <md-button>
+                <md-icon class=""><a href="/auth/facebook">Login With Facebook</a></md-icon>
+            </md-button>
+            
+        
+        </div>
+    
+    </md-toolbar>
+
+    <div class="carousel-container">
+    
+    <jk-carousel
+        data="dataArray"
+        item-template-url="'./views/home/item-template.html'"
+        auto-slide="true"
+        auto-slide-time="2000" >
+    </jk-carousel>
+    </div>
+
+</div>

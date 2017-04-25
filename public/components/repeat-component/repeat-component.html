@@ -1,0 +1,41 @@
+      <md-card>
+         <img ng-src="{{$ctrl.dog.image}}" alt="">
+      <md-card-content>
+        
+          <div class="dogs-info" ng-show="!showContact">
+            <h2 class="md-title">{{$ctrl.dog.name}}</h2>
+            <h3>{{$ctrl.dog.contact.state}}</h3>
+            <h4>State: {{$ctrl.dog.state}}</h4>
+            <h4>Age: {{$ctrl.dog.age}}</h4>
+            <h4>Gender: {{$ctrl.dog.gender}}</h4>
+            <p>{{$ctrl.dog.description}}</p>
+            <p><small>Posted on {{$ctrl.dog.posted | date:"longDate"}}<small></p>
+
+          </div>
+          
+         <div class="dogs-contact" ng-show="showContact">
+           <p><md-icon class="mdi mdi-account"></md-icon> {{$ctrl.dog.contact.name}}</p>
+           <p><md-icon class="mdi mdi-phone"></md-icon> {{$ctrl.dog.contact.phone}}</p>
+           <p><md-icon class="mdi mdi-email"></md-icon> {{$ctrl.dog.contact.email}}</p>
+         </div>
+          
+         <div layout="row">
+            <md-button ng-click="showContact = true" ng-show="!showContact">Contact</md-button>
+            <md-button ng-click="showContact = false" ng-show="showContact">Back To Dog Info</md-button>
+             <div ng-show="$ctrl.showAdmin == 'true'">
+                <md-button ng-click="showControls = !showControls" ng-show="!showControls">Admin</md-button>
+                <md-button ng-click="showControls = !showControls" ng-show="showControls">Close</md-button>
+             </div>
+         </div>
+          
+         <div class="classifed-admin" ng-show="showControls">
+            <h3>Admin</h3>
+            <div layout="row">
+            <md-button ng-click="$ctrl.editDog({dog: $ctrl.dog})" class="md-primary">Edit</md-button>
+            <md-button class="md-warn" ng-click="$ctrl.deleteDog({event: $event, dog: $ctrl.dog})">Delete</md-button>
+<!--            <md-button class="md-primary">Edit</md-button>-->
+            </div>
+         </div>
+        
+       </md-card-content>
+      </md-card>

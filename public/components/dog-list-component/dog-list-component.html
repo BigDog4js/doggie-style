@@ -1,0 +1,9 @@
+<md-content class="md-padding" layout="row" layout-wrap>
+    <repeat-component 
+          ng-repeat="dog in $ctrl.dogs | filter: $ctrl.categoryFilter | filter: $ctrl.dogFilter" flex="30"
+          dog="dog"
+          show-admin="$ctrl.showAdmin"
+          edit-dog="$ctrl.editDog({dog: dog})"
+          delete-dog="$ctrl.deleteDog({event: $event, dog: dog})"
+    </repeat-component>
+</md-content>

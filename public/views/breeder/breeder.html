@@ -1,0 +1,117 @@
+<div>
+    <md-toolbar>
+        
+        <div class="md-toolbar-tools">
+        
+            <p>
+                <strong>Welcome to doggie-style</strong>
+            </p>
+            
+            <md-button ng-click="openSidebar()">
+                <md-icon class="mdi mdi-plus-circle">New Dogs</md-icon>
+            </md-button>
+            
+            <md-button ng-click="showFilters = true">
+             <md-icon class="mdi mdi-magnify"></md-icon>
+                Search
+            </md-button>
+
+            <md-button ui-sref="search">
+                All Dogs
+            </md-button>
+
+        </div>
+    
+    </md-toolbar>
+    
+    <div class="filters" layout="row" layout-align="center center" ng-show="showFilters">
+        
+        <div layout = "row">
+            <label>Enter Search Term</label>
+            <input type="text" ng-model="dogFilter">
+        </div>
+         <md-input-container>
+            <label>Category</label>
+             <md-select ng-model="categoryFilter.breed">
+                 <md-option value="">--No category--</md-option>
+                <md-option ng-repeat="category in categories" value="{{category}}">
+                 {{category}}
+                 </md-option>
+             </md-select>
+        </md-input-container>
+        
+        <div layout = "row">
+            <md-button class="md-warn" ng-click="dogFilter = ''; categoryFilter.breed = ''">
+             Clear
+            </md-button>
+        </div>
+        
+        
+    </div>
+    
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" >
+    <md-toolbar>
+      <h1 ng-hide="editing" class="md-toolbar-tools">Add your dog here</h1>    
+      <h1 ng-show="editing" class="md-toolbar-tools">Edit your dog here</h1>        
+    </md-toolbar>
+      <md-content layout-padding>
+        <form>
+          <md-input-container>
+            <label for="name">Name</label>
+            <input type="text" id="name"
+                   ng-model="newDog.name" md-autofocus>
+          </md-input-container>
+          <md-input-container>
+            <label for="age">Age</label>
+            <input type="text" id="age"
+                 ng-model="newDog.age">
+          </md-input-container>
+          <md-input-container>
+            <label for="breed">Breed</label>
+            <input type="text" id="breed"
+                 ng-model="newDog.breed">
+          </md-input-container>
+          <md-input-container>
+            <label for="gender">Gender</label>
+            <input type="text" id="gender"
+                 ng-model="newDog.gender">
+          </md-input-container>
+          <md-input-container>
+            <label for="state">State</label>
+            <input type="text" id="state"
+                 ng-model="newDog.state">
+          </md-input-container>
+          <md-input-container>
+            <label for="description">Description</label>
+            <textarea type="text" id="description"
+                  ng-model="newDog.description">
+            </textarea>
+          </md-input-container>
+          <md-input-container>
+            <label for="image">Image Link</label>
+            <input type="text" id="image"
+                  ng-model="newDog.image">
+          </md-input-container>
+          <md-button ng-if="!editing" ng-click="saveNewDog(newDog)" class="md-primary">
+            Save
+          </md-button>
+          <md-button ng-if="editing" ng-click="saveEdit(newDog)" class="md-primary">
+            Save Edit
+          </md-button>
+            <pre>{{newDog | json}}</pre>
+          <md-button ng-click="closeSidebar()" class="md-warn">
+            Cancel
+          </md-button>
+        </form>
+      </md-content>
+    </md-sidenav>
+    <dog-list-component dogs="dogs" 
+                        dog-filter="dogFilter"
+                        category-filter="categoryFilter"
+                        show-admin="true"
+                        delete-dog="deleteDog(event, dog)"
+                        edit-dog="editDog(dog)"
+                        >
+    </dog-list-component>
+
+</div>
