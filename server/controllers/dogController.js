@@ -6,7 +6,11 @@ const db = require('../db.js')
 module.exports = {
     getDogs: (req, res, next) => {
         db.getDogs([], (err, dogs) => {
-            res.status(200).json(formatDogs(dogs))
+            if (err) next(err)
+            if (dogs) {
+                dogs = formatDogs(dogs)
+            }
+            return res.status(200).json(dogs)
         })
     },
 
@@ -15,7 +19,12 @@ module.exports = {
             return res.status(401).json("Please log in. ")
         }
         db.getDogsByUser([req.user.id], (err, dogs) => {
-            res.status(200).json(formatDogs(dogs))
+            if (err) next(err)
+            if (dogs) {
+                dogs = formatDogs(dogs)
+            }
+            return res.status(200).json(dogs)
+            
         })
     },
 
