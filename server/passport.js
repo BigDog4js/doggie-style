@@ -1,12 +1,12 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var db = require('./db');
-var config = require('./config.js')
+var config = require('../config.js')
 
 passport.use(new FacebookStrategy({
     clientID: config.clientId,
     clientSecret: config.clientSecret,
-    callbackURL: config.callbackURL
+    callbackURL: 
   },
   function(accessToken, refreshToken, profile, done) {
      console.log(profile)
