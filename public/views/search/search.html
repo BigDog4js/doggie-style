@@ -7,7 +7,7 @@
                 <strong>Welcome to doggie-style</strong>
             </p>
             
-            <md-button ng-click="openSidebar()">
+            <md-button ng-click="openNewDogForm()">
                 <md-icon class="mdi mdi-plus-circle">New Dogs</md-icon>
             </md-button>
             
@@ -93,6 +93,20 @@
             <input type="text" id="image"
                   ng-model="newDog.image">
           </md-input-container>
+                    <div class="dogs-contact">
+          
+            <md-input-container>              
+             <p><md-icon class="mdi mdi-account"></md-icon><input ng-model="newDog.contact.name" type="text" placeholder="  User Name"></input> {{newDog.contact.name}}</p>
+            </md-input-container>
+            <md-input-container>
+                <p><md-icon class="mdi mdi-phone"></md-icon><input ng-model="newDog.contact.phone" placeholder="Phone Number" type="text"></input> {{newDog.contact.phone}}</p>            
+            </md-input-container>
+            <md-input-container>
+               <p><md-icon class="mdi mdi-email" ></md-icon><input placeholder="Email" type="text" ng-model="newDog.contact.email"></input> {{newDog.contact.email}}</p>            
+            </md-input-container>
+         </div>
+    
+    
           <md-button ng-if="!editing" ng-click="saveNewDog(newDog)" class="md-primary">
             Save
           </md-button>

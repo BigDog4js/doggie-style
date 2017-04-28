@@ -28,6 +28,11 @@ angular.module("dogProject").controller("searchController",function($scope, $htt
        $mdSidenav("left").open();
    }
    
+   $scope.openNewDogForm = function() {
+       $scope.newDog = {name: ""};
+       $scope.openSidebar();
+   }
+   
    $scope.closeSidebar = function() {
        $mdSidenav("left").close();
    }
