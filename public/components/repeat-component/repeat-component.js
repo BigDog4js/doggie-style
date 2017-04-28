@@ -4,10 +4,13 @@ angular.module("dogProject").component("repeatComponent", {
         dog: "=",
         showAdmin: "<",
         deleteDog: "&",
-        editDog: "&"
+        editDog: "&",
+        showEditContact: "&"
     },
     controller: function() {
-        setTimeout(() => {console.log(this.showAdmin)}, 1000)
+        setTimeout(() => {
+            console.log(this.showAdmin)
+        }, 1000)
     }
     
     

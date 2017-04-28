@@ -3,4 +3,4 @@ CREATE TABLE users (
     facebook_id VARCHAR(100),
     name VARCHAR(255),
     state VARCHAR(2)
-)
+);

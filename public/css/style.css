@@ -5,3 +5,14 @@ md-icon {
     display: inline;
 }
 
+md-card .dog-image {
+    height: 185px;
+    width: auto;
+}
+dog-list-component > md-content {
+    display: flex;
+    justify-content: space-around;
+}
+repeat-component {
+    flex-basis: 33%;
+}

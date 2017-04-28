@@ -1,0 +1,31 @@
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" md-is-locked="true">
+      <md-content layout-padding>
+        <form>
+          
+            <md-input-container>
+              
+            <div class="dogs-contact" ng-show="showContact">
+             <p><md-icon class="mdi mdi-account"></md-icon><input ng-model="contact.name" type="text" placeholder="User Name"></input> {{$ctrl.dog.contact.name}}</p>
+           <p><md-icon class="mdi mdi-phone"></md-icon><input ng-model="contact.phone" placeholder="Phone Number" type="text"></input> {{$ctrl.dog.contact.phone}}</p>
+           <p><md-icon class="mdi mdi-email" ng-model="contact.email"></md-icon><input placeholder="Email" type="text"></input> {{$ctrl.dog.contact.email}}</p>
+         </div>
+            
+              
+          </md-input-container>
+           
+          <md-button ng-if="!editing" ng-click="saveNewDog(newDog)" class="md-primary">
+            Save
+          </md-button>
+          <md-button ng-if="editing" ng-click="saveEdit(newDog)" class="md-primary">
+            Save Edit
+          </md-button>
+            <pre>{{newDog | json}}</pre>
+          <md-button ng-click="closeSidebar()" class="md-warn">
+            Cancel
+          </md-button>
+        </form>
+      </md-content>
+    </md-sidenav>
+    
+
+          

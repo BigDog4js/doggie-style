@@ -27,12 +27,25 @@ angular.module("dogProject").controller("breederController",function($scope, $ht
    }
    $scope.getDogs()
    
+   
    $scope.openSidebar = function() {
        $mdSidenav("left").open();
    }
    
+   $scope.openNewDogForm = function() {
+       $scope.newDog = {name: ""};
+       $scope.openSidebar();
+   }
    $scope.closeSidebar = function() {
        $mdSidenav("left").close();
+   }
+   
+   $scope.showEditContact = function() {
+       console.log("Firing")
+       $mdSidenav("right").open()
+   }
+   $scope.closeRightSidebar = function() {
+       $mdSidenav("right").close()
    }
    
    $scope.saveNewDog = function(newDog) {
@@ -84,7 +97,7 @@ angular.module("dogProject").controller("breederController",function($scope, $ht
        $scope.sidebarTitle = "Edit Dog";
        $scope.newDog = Object.assign({}, dog);
        $scope.editIndex = $scope.dogs.indexOf(dog)
-       $mdSidenav("left").open();
+       $scope.openSidebar()
    }
    
    $scope.saveEdit = function(newDog){

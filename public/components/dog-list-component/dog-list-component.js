@@ -5,7 +5,8 @@ angular.module("dogProject").component("dogListComponent", {
             categoryFilter: '<',            
             dogFilter: '<',
             deleteDog: '&',
-            editDog: '&'
+            editDog: '&',
+            showEditContact: "&"
         },
         controller: function() {
             this.showControls = false;

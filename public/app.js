@@ -2,6 +2,7 @@ angular.module("dogProject", ["ngMaterial", "ui.router", "jkAngularCarousel"]).c
     $mdThemingProvider.theme('default')
     .primaryPalette('brown')
     .accentPalette('pink')
+    
   
     $stateProvider
         .state('home', {

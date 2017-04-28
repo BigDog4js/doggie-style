@@ -1,5 +1,5 @@
       <md-card>
-         <img ng-src="{{$ctrl.dog.image}}" alt="">
+         <img class="dog-image" ng-src="{{$ctrl.dog.image}}" alt="">
       <md-card-content>
         
           <div class="dogs-info" ng-show="!showContact">
@@ -17,6 +17,7 @@
            <p><md-icon class="mdi mdi-account"></md-icon> {{$ctrl.dog.contact.name}}</p>
            <p><md-icon class="mdi mdi-phone"></md-icon> {{$ctrl.dog.contact.phone}}</p>
            <p><md-icon class="mdi mdi-email"></md-icon> {{$ctrl.dog.contact.email}}</p>
+<!--           <p><md-button ng-click="$ctrl.showEditContact()">Click here to edit contact info</md-button></p>-->
          </div>
           
          <div layout="row">

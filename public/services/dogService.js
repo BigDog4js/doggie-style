@@ -29,7 +29,7 @@ angular.module("dogProject").service("dogService",function($http){
     this.updateDog = function(newDog) {
         return $http({
             method: 'PUT',
-            url: "/api/dogs/" + newDog.id,
+            url: "/api/dogs",
             data: newDog
         })
     }
