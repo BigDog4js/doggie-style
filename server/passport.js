@@ -1,11 +1,12 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var db = require('./db')
+var db = require('./db');
+var config = require('./config.js')
 
 passport.use(new FacebookStrategy({
-    clientID: '301059243662230',
-    clientSecret: '91166b8b749d66e8f144afe30573544d',
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    clientID: config.clientId,
+    clientSecret: config.clientSecret,
+    callbackURL: config.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
      console.log(profile)
