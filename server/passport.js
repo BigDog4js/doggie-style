@@ -4,7 +4,7 @@ var db = require('./db');
 var config = require('../config.js')
 
 passport.use(new FacebookStrategy({
-    clientID: config.clientId,
+    clientID: config.clientID,
     clientSecret: config.clientSecret,
     callbackURL: config.callbackURL
   },
