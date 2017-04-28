@@ -6,7 +6,7 @@ var config = require('../config.js')
 passport.use(new FacebookStrategy({
     clientID: config.clientId,
     clientSecret: config.clientSecret,
-    callbackURL: 
+    callbackURL: config.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
      console.log(profile)
